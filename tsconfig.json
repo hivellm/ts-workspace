@@ -47,16 +47,16 @@
     // Path Mapping for Monorepo
     "baseUrl": ".",
     "paths": {
-      "@cmmv-hive/shared-types": ["./packages/shared-types/src"],
-      "@cmmv-hive/shared-types/*": ["./packages/shared-types/src/*"],
-      "@cmmv-hive/crypto-utils": ["./packages/crypto-utils/src"],
-      "@cmmv-hive/crypto-utils/*": ["./packages/crypto-utils/src/*"],
-      "@cmmv-hive/governance-core": ["./packages/governance-core/src"],
-      "@cmmv-hive/governance-core/*": ["./packages/governance-core/src/*"],
-      "@cmmv-hive/ui-components": ["./packages/ui-components/src"],
-      "@cmmv-hive/ui-components/*": ["./packages/ui-components/src/*"],
-      "@cmmv-hive/testing-utils": ["./packages/testing-utils/src"],
-      "@cmmv-hive/testing-utils/*": ["./packages/testing-utils/src/*"]
+      "@hivellm/shared-types": ["./packages/shared-types/src"],
+      "@hivellm/shared-types/*": ["./packages/shared-types/src/*"],
+      "@hivellm/crypto-utils": ["./packages/crypto-utils/src"],
+      "@hivellm/crypto-utils/*": ["./packages/crypto-utils/src/*"],
+      "@hivellm/bip-system": ["./packages/bip-system/src"],
+      "@hivellm/bip-system/*": ["./packages/bip-system/src/*"],
+      "@hivellm/resilience-framework": ["./packages/resilience-framework/src"],
+      "@hivellm/resilience-framework/*": ["./packages/resilience-framework/src/*"],
+      "@hivellm/testing-utils": ["./packages/testing-utils/src"],
+      "@hivellm/testing-utils/*": ["./packages/testing-utils/src/*"]
     }
   },
   "include": [

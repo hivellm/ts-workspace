@@ -12,7 +12,7 @@ import type {
   KeyStorageEntry,
   KeyMetadata,
   ModelIdentity
-} from '@cmmv-hive/shared-types';
+} from '@hivellm/shared-types';
 
 /**
  * Secure Key Storage Service

@@ -14,7 +14,7 @@ import type {
   SignableMessage,
   SignedMessage,
   SignatureVerificationResult
-} from '@cmmv-hive/shared-types';
+} from '@hivellm/shared-types';
 
 /**
  * Core ECC Cryptography Service

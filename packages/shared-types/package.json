@@ -1,7 +1,7 @@
 {
-  "name": "@cmmv-hive/shared-types",
+  "name": "@hivellm/shared-types",
   "version": "1.0.0",
-  "description": "Shared TypeScript types for CMMV-Hive ecosystem",
+  "description": "Shared TypeScript types for HiveLLM ecosystem",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -38,11 +38,11 @@
   "keywords": [
     "typescript",
     "types",
-    "cmmv-hive",
+    "hivellm",
     "governance",
     "crypto"
   ],
-  "author": "CMMV-Hive Team",
+  "author": "HiveLLM Team",
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^20.10.5",

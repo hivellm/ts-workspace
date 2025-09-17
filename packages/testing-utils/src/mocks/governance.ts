@@ -8,7 +8,7 @@ import type {
   Vote,
   ModelIdentity,
   VotingSession
-} from '@cmmv-hive/shared-types';
+} from '@hivellm/shared-types';
 
 export const createMockModelIdentity = (overrides: Partial<ModelIdentity> = {}): ModelIdentity => ({
   modelName: 'test-model',

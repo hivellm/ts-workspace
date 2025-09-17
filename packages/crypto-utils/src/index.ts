@@ -27,4 +27,4 @@ export type {
   SignatureVerificationResult,
   KeyStorageEntry,
   KeyMetadata,
-} from '@cmmv-hive/shared-types';
+} from '@hivellm/shared-types';

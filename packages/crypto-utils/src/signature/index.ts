@@ -13,7 +13,7 @@ import type {
   SignableMessage,
   SignedMessage,
   SignatureVerificationResult
-} from '@cmmv-hive/shared-types';
+} from '@hivellm/shared-types';
 
 /**
  * Digital Signature Service for AI Model Authentication

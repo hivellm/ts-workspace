@@ -7,7 +7,7 @@ import type {
   ECCKeyPair,
   ECCSignature,
   ModelIdentity
-} from '@cmmv-hive/shared-types';
+} from '@hivellm/shared-types';
 
 export const createMockKeyPair = (): ECCKeyPair => ({
   privateKey: new Uint8Array(32).fill(1),

@@ -1,7 +1,7 @@
 {
-  "name": "@cmmv-hive/crypto-utils",
+  "name": "@hivellm/crypto-utils",
   "version": "1.0.0",
-  "description": "ECC cryptography utilities for CMMV-Hive with secp256k1 support",
+  "description": "ECC cryptography utilities for HiveLLM with secp256k1 support",
   "type": "module",
   "main": "./dist/crypto-utils/src/index.js",
   "module": "./dist/crypto-utils/src/index.js",
@@ -51,19 +51,19 @@
     "secp256k1",
     "digital-signatures",
     "typescript",
-    "cmmv-hive"
+    "hivellm"
   ],
-  "author": "CMMV-Hive Team",
+  "author": "HiveLLM Team",
   "license": "MIT",
   "dependencies": {
-    "@cmmv-hive/shared-types": "workspace:*",
+    "@hivellm/shared-types": "workspace:*",
     "@noble/secp256k1": "^2.0.0"
   },
   "devDependencies": {
     "@types/node": "^20.10.5",
     "typescript": "^5.3.3",
     "vitest": "^1.1.0",
-    "@cmmv-hive/testing-utils": "workspace:*"
+    "@hivellm/testing-utils": "workspace:*"
   },
   "publishConfig": {
     "access": "public"

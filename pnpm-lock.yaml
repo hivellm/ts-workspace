@@ -63,10 +63,13 @@ importers:
 
   packages/bip-system:
     dependencies:
-      '@cmmv-hive/crypto-utils':
+      '@hivellm/crypto-utils':
         specifier: workspace:*
         version: link:../crypto-utils
-      '@cmmv-hive/shared-types':
+      '@hivellm/resilience-framework':
+        specifier: workspace:*
+        version: link:../resilience-framework
+      '@hivellm/shared-types':
         specifier: workspace:*
         version: link:../shared-types
     devDependencies:
@@ -85,14 +88,14 @@ importers:
 
   packages/crypto-utils:
     dependencies:
-      '@cmmv-hive/shared-types':
+      '@hivellm/shared-types':
         specifier: workspace:*
         version: link:../shared-types
       '@noble/secp256k1':
         specifier: ^2.0.0
         version: 2.3.0
     devDependencies:
-      '@cmmv-hive/testing-utils':
+      '@hivellm/testing-utils':
         specifier: workspace:*
         version: link:../testing-utils
       '@types/node':
@@ -107,7 +110,7 @@ importers:
 
   packages/resilience-framework:
     dependencies:
-      '@cmmv-hive/shared-types':
+      '@hivellm/shared-types':
         specifier: workspace:*
         version: link:../shared-types
     devDependencies:
@@ -144,7 +147,7 @@ importers:
 
   packages/testing-utils:
     dependencies:
-      '@cmmv-hive/shared-types':
+      '@hivellm/shared-types':
         specifier: workspace:*
         version: link:../shared-types
     devDependencies:

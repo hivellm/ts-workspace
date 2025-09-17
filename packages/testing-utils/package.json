@@ -1,7 +1,7 @@
 {
-  "name": "@cmmv-hive/testing-utils",
+  "name": "@hivellm/testing-utils",
   "version": "1.0.0",
-  "description": "Testing utilities and helpers for CMMV-Hive",
+  "description": "Testing utilities and helpers for HiveLLM",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -29,12 +29,12 @@
     "vitest",
     "mocks",
     "fixtures",
-    "cmmv-hive"
+    "hivellm"
   ],
-  "author": "CMMV-Hive Team",
+  "author": "HiveLLM Team",
   "license": "MIT",
   "dependencies": {
-    "@cmmv-hive/shared-types": "workspace:*"
+    "@hivellm/shared-types": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^20.10.5",

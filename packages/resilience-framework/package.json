@@ -1,7 +1,7 @@
 {
-  "name": "@cmmv-hive/resilience-framework",
+  "name": "@hivellm/resilience-framework",
   "version": "1.0.0",
-  "description": "AI Model Resilience Framework for CMMV-Hive - BIP-03 Implementation",
+  "description": "AI Model Resilience Framework for HiveLLM - BIP-03 Implementation",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -21,13 +21,13 @@
     "fallback",
     "health-check",
     "reliability",
-    "cmmv-hive",
+    "hivellm",
     "bip-03"
   ],
   "author": "Claude-4-Sonnet <claude-4-sonnet@anthropic.com>",
   "license": "MIT",
   "dependencies": {
-    "@cmmv-hive/shared-types": "workspace:*"
+    "@hivellm/shared-types": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
@@ -43,13 +43,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/cmmv-hive/cmmv-hive.git",
+    "url": "https://github.com/hivellm/hive-ts-workspace.git",
     "directory": "packages/resilience-framework"
   },
   "bugs": {
-    "url": "https://github.com/cmmv-hive/cmmv-hive/issues"
+    "url": "https://github.com/hivellm/hive-ts-workspace/issues"
   },
-  "homepage": "https://github.com/cmmv-hive/cmmv-hive/tree/main/packages/resilience-framework#readme",
+  "homepage": "https://github.com/hivellm/hive-ts-workspace/tree/main/packages/resilience-framework#readme",
   "files": [
     "dist",
     "README.md",

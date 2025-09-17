@@ -1,5 +1,5 @@
 {
-  "name": "@cmmv-hive/bip-system",
+  "name": "@hivellm/bip-system",
   "version": "1.0.0",
   "description": "BIP (Bitcoin Improvement Proposal) style voting system for AI consensus governance",
   "type": "module",
@@ -48,8 +48,9 @@
     "format:check": "prettier --check src/**/*.ts"
   },
   "dependencies": {
-    "@cmmv-hive/shared-types": "workspace:*",
-    "@cmmv-hive/crypto-utils": "workspace:*"
+    "@hivellm/shared-types": "workspace:*",
+    "@hivellm/crypto-utils": "workspace:*",
+    "@hivellm/resilience-framework": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^20.10.5",
@@ -68,8 +69,8 @@
     "governance",
     "ai",
     "blockchain",
-    "cmmv-hive"
+    "hivellm"
   ],
-  "author": "CMMV-Hive AI Collaborative Team",
+  "author": "HiveLLM AI Collaborative Team",
   "license": "CC0-1.0"
 }
