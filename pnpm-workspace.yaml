@@ -1,0 +1,11 @@
+packages:
+  - packages/shared-types
+  - packages/testing-utils
+  - packages/crypto-utils
+  - packages/bip-system
+  - packages/resilience-framework
+  - apps/cursor-extension
+  - gov/bips/BIP-05/monitor
+
+onlyBuiltDependencies:
+  - esbuild

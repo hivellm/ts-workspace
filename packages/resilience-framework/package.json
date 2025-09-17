@@ -1,0 +1,80 @@
+{
+  "name": "@cmmv-hive/resilience-framework",
+  "version": "1.0.0",
+  "description": "AI Model Resilience Framework for CMMV-Hive - BIP-03 Implementation",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "lint": "eslint src/**/*.ts",
+    "lint:fix": "eslint src/**/*.ts --fix",
+    "dev": "tsc --watch",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [
+    "ai",
+    "resilience",
+    "circuit-breaker",
+    "fallback",
+    "health-check",
+    "reliability",
+    "cmmv-hive",
+    "bip-03"
+  ],
+  "author": "Claude-4-Sonnet <claude-4-sonnet@anthropic.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@cmmv-hive/shared-types": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0",
+    "vitest": "^1.0.0",
+    "@vitest/coverage-v8": "^1.0.0",
+    "eslint": "^8.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cmmv-hive/cmmv-hive.git",
+    "directory": "packages/resilience-framework"
+  },
+  "bugs": {
+    "url": "https://github.com/cmmv-hive/cmmv-hive/issues"
+  },
+  "homepage": "https://github.com/cmmv-hive/cmmv-hive/tree/main/packages/resilience-framework#readme",
+  "files": [
+    "dist",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.js",
+      "import": "./dist/index.js"
+    },
+    "./core": {
+      "types": "./dist/core/index.d.ts",
+      "require": "./dist/core/index.js",
+      "import": "./dist/core/index.js"
+    },
+    "./fallback": {
+      "types": "./dist/fallback/index.d.ts",
+      "require": "./dist/fallback/index.js",
+      "import": "./dist/fallback/index.js"
+    },
+    "./monitoring": {
+      "types": "./dist/monitoring/index.d.ts",
+      "require": "./dist/monitoring/index.js",
+      "import": "./dist/monitoring/index.js"
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "name": "@cmmv-hive/testing-utils",
+  "version": "1.0.0",
+  "description": "Testing utilities and helpers for CMMV-Hive",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "clean": "rm -rf dist",
+    "type-check": "tsc --noEmit",
+    "lint": "eslint src --ext .ts",
+    "lint:fix": "eslint src --ext .ts --fix"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "keywords": [
+    "testing",
+    "utilities",
+    "vitest",
+    "mocks",
+    "fixtures",
+    "cmmv-hive"
+  ],
+  "author": "CMMV-Hive Team",
+  "license": "MIT",
+  "dependencies": {
+    "@cmmv-hive/shared-types": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.5",
+    "typescript": "^5.3.3",
+    "vitest": "^1.1.0"
+  },
+  "peerDependencies": {
+    "vitest": "^1.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

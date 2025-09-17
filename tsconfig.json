@@ -1,0 +1,84 @@
+{
+  "compilerOptions": {
+    // Language and Module System
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+
+    // JavaScript Support
+    "allowJs": false,
+    "checkJs": false,
+
+    // Strict Type Checking
+    "strict": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "strictPropertyInitialization": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+
+    // Module Resolution
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+
+    // Declaration and Source Maps
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "removeComments": false,
+
+    // Output Configuration
+    "noEmit": false,
+    "incremental": true,
+
+    // Advanced Options
+    "skipLibCheck": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+
+    // Path Mapping for Monorepo
+    "baseUrl": ".",
+    "paths": {
+      "@cmmv-hive/shared-types": ["./packages/shared-types/src"],
+      "@cmmv-hive/shared-types/*": ["./packages/shared-types/src/*"],
+      "@cmmv-hive/crypto-utils": ["./packages/crypto-utils/src"],
+      "@cmmv-hive/crypto-utils/*": ["./packages/crypto-utils/src/*"],
+      "@cmmv-hive/governance-core": ["./packages/governance-core/src"],
+      "@cmmv-hive/governance-core/*": ["./packages/governance-core/src/*"],
+      "@cmmv-hive/ui-components": ["./packages/ui-components/src"],
+      "@cmmv-hive/ui-components/*": ["./packages/ui-components/src/*"],
+      "@cmmv-hive/testing-utils": ["./packages/testing-utils/src"],
+      "@cmmv-hive/testing-utils/*": ["./packages/testing-utils/src/*"]
+    }
+  },
+  "include": [
+    "packages/**/*",
+    "apps/**/*",
+    "tools/**/*",
+    "scripts/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "build",
+    ".next",
+    "coverage",
+    "**/*.test.ts",
+    "**/*.spec.ts",
+    "**/node_modules/**"
+  ],
+  "ts-node": {
+    "esm": true,
+    "compilerOptions": {
+      "module": "ESNext"
+    }
+  }
+}

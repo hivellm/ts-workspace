@@ -1,0 +1,89 @@
+{
+    "name": "hivellm-workspace",
+    "version": "2.0.0",
+    "description": "HiveLLM: AI Model Consensus and Governance Platform with TypeScript",
+    "private": true,
+    "type": "module",
+    "engines": {
+      "node": ">=18.0.0",
+      "pnpm": ">=10.15.1"
+    },
+    "scripts": {
+      "build": "turbo run build",
+      "dev": "turbo run dev",
+      "test": "turbo run test",
+      "test:watch": "turbo run test:watch",
+      "test:coverage": "turbo run test -- --coverage",
+      "lint": "turbo run lint",
+      "lint:fix": "turbo run lint:fix",
+      "type-check": "turbo run type-check",
+      "clean": "turbo run clean && rm -rf node_modules",
+      "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
+      "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,md}\"",
+      "prepare": "husky install",
+      "precommit": "lint-staged",
+      "changeset": "changeset",
+      "version-packages": "changeset version",
+      "release": "changeset publish",
+      "vote-hash": "node packages/crypto-utils/dist/crypto-utils/src/cli.js",
+      "vote-hash:build": "cd packages/crypto-utils && npm run build && cd ../.. && npm run vote-hash",
+      "hash": "npm run vote-hash",
+      "bip-create": "node packages/bip-system/dist/cli/create.js",
+      "bip-validate": "node packages/bip-system/dist/cli/validate.js",
+      "bip-vote": "node packages/bip-system/dist/cli/vote.js",
+      "bip-tally": "node packages/bip-system/dist/cli/tally.js",
+      "bip-generate-chain": "node packages/bip-system/dist/cli/generate-chain.js",
+      "bip:build": "cd packages/bip-system && npm run build && cd ../.."
+    },
+    "devDependencies": {
+      "@changesets/cli": "^2.27.1",
+      "@eslint/js": "^9.35.0",
+      "@types/node": "^20.10.5",
+      "@typescript-eslint/eslint-plugin": "^8.0.0",
+      "@typescript-eslint/parser": "^8.0.0",
+      "@vitest/ui": "^3.2.4",
+      "eslint": "^9.35.0",
+      "eslint-config-prettier": "^9.1.0",
+      "eslint-plugin-import": "^2.29.1",
+      "eslint-plugin-security": "^3.0.0",
+      "husky": "^8.0.3",
+      "lint-staged": "^15.2.0",
+      "prettier": "^3.1.1",
+      "turbo": "^2.5.6",
+      "typescript": "^5.3.3",
+      "vitest": "^1.1.0"
+    },
+    "dependencies": {
+      "dotenv": "^16.3.1"
+    },
+    "keywords": [
+      "ai",
+      "governance",
+      "consensus",
+      "typescript",
+      "monorepo",
+      "voting",
+      "proposals",
+      "hivellm"
+    ],
+    "author": "HiveLLM Team",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/hivellm/hive-ts-workspace.git"
+    },
+    "bugs": {
+      "url": "https://github.com/hivellm/hive-ts-workspace/issues"
+    },
+    "homepage": "https://github.com/hivellm/hive-ts-workspace#readme",
+    "lint-staged": {
+      "*.{ts,tsx,js,jsx}": [
+        "eslint --fix",
+        "prettier --write"
+      ],
+      "*.{json,md,yml,yaml}": [
+        "prettier --write"
+      ]
+    },
+    "packageManager": "pnpm@10.15.1"
+  }

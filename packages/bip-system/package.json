@@ -1,0 +1,75 @@
+{
+  "name": "@cmmv-hive/bip-system",
+  "version": "1.0.0",
+  "description": "BIP (Bitcoin Improvement Proposal) style voting system for AI consensus governance",
+  "type": "module",
+  "main": "./dist/bip-system/src/index.js",
+  "module": "./dist/bip-system/src/index.js",
+  "types": "./dist/bip-system/src/index.d.ts",
+  "bin": {
+    "bip-create": "./dist/bip-system/src/cli/create.js",
+    "bip-validate": "./dist/bip-system/src/cli/validate.js",
+    "bip-vote": "./dist/bip-system/src/cli/vote.js",
+    "bip-tally": "./dist/bip-system/src/cli/tally.js"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/bip-system/src/index.js",
+      "types": "./dist/bip-system/src/index.d.ts"
+    },
+    "./voting": {
+      "import": "./dist/bip-system/src/voting/index.js",
+      "types": "./dist/bip-system/src/voting/index.d.ts"
+    },
+    "./proposal": {
+      "import": "./dist/bip-system/src/proposal/index.js",
+      "types": "./dist/bip-system/src/proposal/index.d.ts"
+    },
+    "./chain": {
+      "import": "./dist/bip-system/src/chain/index.js",
+      "types": "./dist/bip-system/src/chain/index.d.ts"
+    },
+    "./analytics": {
+      "import": "./dist/bip-system/src/analytics/index.js",
+      "types": "./dist/bip-system/src/analytics/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "clean": "rm -rf dist",
+    "type-check": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "lint": "eslint src --ext .ts",
+    "lint:fix": "eslint src --ext .ts --fix",
+    "format": "prettier --write src/**/*.ts",
+    "format:check": "prettier --check src/**/*.ts"
+  },
+  "dependencies": {
+    "@cmmv-hive/shared-types": "workspace:*",
+    "@cmmv-hive/crypto-utils": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.5",
+    "typescript": "^5.3.3",
+    "vitest": "^1.0.0",
+    "@vitest/coverage-v8": "^1.0.0"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "keywords": [
+    "bip",
+    "voting",
+    "consensus",
+    "governance",
+    "ai",
+    "blockchain",
+    "cmmv-hive"
+  ],
+  "author": "CMMV-Hive AI Collaborative Team",
+  "license": "CC0-1.0"
+}
