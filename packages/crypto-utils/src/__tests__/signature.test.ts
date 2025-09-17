@@ -3,8 +3,9 @@
  */
 
 import { describe, it, expect } from 'vitest';
-import { SignatureService } from '../signature/index.js';
+
 import { ECCService } from '../ecc/index.js';
+import { SignatureService } from '../signature/index.js';
 
 describe('SignatureService', () => {
   it('should create and verify model identity', async () => {

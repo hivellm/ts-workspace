@@ -5,6 +5,7 @@
 
 import { promises as fs } from 'fs';
 import { join } from 'path';
+
 import { NotificationEvent, NotificationType, VotingSession } from '../types/index.js';
 
 export class NotificationManager {

@@ -6,6 +6,9 @@
  * @version 1.0.0
  */
 
+
+import { CircuitBreakerFactory } from '../core/CircuitBreaker.js';
+import { RetryManager } from '../core/RetryManager.js';
 import {
   AITask,
   AIResponse,
@@ -16,9 +19,6 @@ import {
   ResilienceError,
   AllModelsFailedError
 } from '../types/index.js';
-
-import { CircuitBreakerFactory } from '../core/CircuitBreaker.js';
-import { RetryManager } from '../core/RetryManager.js';
 
 /**
  * Performance metrics for model routing decisions
@@ -363,7 +363,7 @@ export class FallbackManager {
     const startTime = Date.now();
     const circuitBreaker = CircuitBreakerFactory.getOrCreate(model.id);
 
-    let retryCount = 0;
+    const retryCount = 0;
     let circuitBreakerTriggered = false;
 
     try {

@@ -3,11 +3,11 @@
  * High-level workflow functions for common BIP system operations
  */
 
-import { BIPManager } from '../proposal/BIPManager.js';
-import { VotingManager } from '../voting/VotingManager.js';
 import { VotingAnalyticsService } from '../analytics/VotingAnalytics.js';
 import { NotificationManager } from '../notifications/NotificationManager.js';
+import { BIPManager } from '../proposal/BIPManager.js';
 import { BIPProposal, VotingSession, VotingAnalytics, BIPType, BIPCategory, ModelProfile } from '../types/index.js';
+import { VotingManager } from '../voting/VotingManager.js';
 
 /**
  * Complete BIP creation workflow

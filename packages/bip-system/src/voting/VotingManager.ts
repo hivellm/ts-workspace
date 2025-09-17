@@ -3,11 +3,12 @@
  * Manages voting sessions, vote collection, and results calculation
  */
 
+import { createHash } from 'crypto';
 import { promises as fs } from 'fs';
 import { join } from 'path';
-import { VotingSession, VotingBlock, VoteData, ResultData, ProposalVote, ProposalResult, ModelProfile, VotingStatus } from '../types/index.js';
+
 import { VotingChain } from '../chain/VotingChain.js';
-import { createHash } from 'crypto';
+import { VotingSession, VotingBlock, VoteData, ResultData, ProposalVote, ProposalResult, ModelProfile, VotingStatus } from '../types/index.js';
 
 export class VotingManager {
   private minutesDirectory: string;

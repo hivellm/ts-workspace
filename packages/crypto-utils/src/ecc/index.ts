@@ -4,9 +4,8 @@
  * @version 1.0.0
  */
 
-import * as secp256k1 from '@noble/secp256k1';
-import { webcrypto as nodeWebCrypto } from 'crypto';
-import { createHash, createHmac, randomBytes } from 'crypto';
+import { webcrypto as nodeWebCrypto , createHash, createHmac, randomBytes } from 'crypto';
+
 import type {
   ECCKeyPair,
   ECCSignature,
@@ -15,6 +14,7 @@ import type {
   SignedMessage,
   SignatureVerificationResult
 } from '@hivellm/shared-types';
+import * as secp256k1 from '@noble/secp256k1';
 
 /**
  * Core ECC Cryptography Service
@@ -26,7 +26,7 @@ export class ECCService {
   // Ensure noble-secp256k1 has sync hash providers configured (required in v2)
   // Use Node's crypto for SHA-256 and HMAC-SHA256
   // This setup is idempotent and safe to run multiple times
-  /* eslint-disable */
+   
   private static ensureHashProvidersConfigured(): void {
     // @ts-expect-error etc is a stable internal API for configuring hashes
     if (!secp256k1.etc?.sha256Sync) {
@@ -46,7 +46,7 @@ export class ECCService {
       };
     }
   }
-  /* eslint-enable */
+   
 
   /** Encode signature (r,s) to DER format */
   static signatureToDER(signature: ECCSignature): Uint8Array {

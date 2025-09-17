@@ -4,6 +4,7 @@
 
 import { promises as fs } from 'fs';
 import { join, dirname } from 'path';
+
 import { BIPProposal, BIPType, BIPCategory, BIPStatus, BIPChangelogEntry } from '../types/index.js';
 
 export class BIPManager {

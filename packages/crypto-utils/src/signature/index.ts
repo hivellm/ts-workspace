@@ -4,8 +4,8 @@
  * @version 1.0.0
  */
 
-import { ECCService } from '../ecc/index.js';
 import { createHash } from 'crypto';
+
 import type {
   ECCKeyPair,
   ECCSignature,
@@ -14,6 +14,8 @@ import type {
   SignedMessage,
   SignatureVerificationResult
 } from '@hivellm/shared-types';
+
+import { ECCService } from '../ecc/index.js';
 
 /**
  * Digital Signature Service for AI Model Authentication

@@ -5,6 +5,7 @@
 
 import { promises as fs } from 'fs';
 import { join } from 'path';
+
 import { BIPManager } from '../proposal/BIPManager.js';
 import { BIPProposal, BIPType, BIPCategory, BIPMilestone } from '../types/index.js';
 

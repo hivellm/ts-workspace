@@ -4,9 +4,9 @@
  * Command-line interface for submitting votes in BIP voting sessions
  */
 
-import { VotingManager } from '../voting/VotingManager.js';
 import { NotificationManager } from '../notifications/NotificationManager.js';
 import { ProposalVote, ModelProfile } from '../types/index.js';
+import { VotingManager } from '../voting/VotingManager.js';
 
 interface CLIOptions {
   minuteId?: string;

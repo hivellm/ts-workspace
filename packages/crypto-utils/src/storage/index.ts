@@ -5,14 +5,16 @@
  */
 
 import { randomBytes, createCipheriv, createDecipheriv, pbkdf2Sync } from 'crypto';
-import * as secp256k1 from '@noble/secp256k1';
-import { ECCService } from '../ecc/index.js';
+
 import type {
   ECCKeyPair,
   KeyStorageEntry,
   KeyMetadata,
   ModelIdentity
 } from '@hivellm/shared-types';
+import * as secp256k1 from '@noble/secp256k1';
+
+import { ECCService } from '../ecc/index.js';
 
 /**
  * Secure Key Storage Service

@@ -4,9 +4,9 @@
  * Command-line interface for finalizing votes and generating results
  */
 
-import { VotingManager } from '../voting/VotingManager.js';
 import { VotingAnalyticsService } from '../analytics/VotingAnalytics.js';
 import { NotificationManager } from '../notifications/NotificationManager.js';
+import { VotingManager } from '../voting/VotingManager.js';
 
 interface CLIOptions {
   minuteId?: string;

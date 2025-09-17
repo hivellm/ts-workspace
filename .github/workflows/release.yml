@@ -1,0 +1,81 @@
+name: Release
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'packages/**'
+      - 'package.json'
+      - 'CHANGELOG.md'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup PNPM
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10.15.1
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build packages
+        run: pnpm build
+
+      - name: Run tests
+        run: pnpm test
+
+      - name: Create Release PR
+        uses: changesets/action@v1
+        with:
+          title: "chore: release packages"
+          commit: "chore: release packages"
+          version: pnpm changeset version
+          publish: pnpm release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Create GitHub Release
+        if: steps.changesets.outputs.published == 'true'
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: v${{ steps.changesets.outputs.publishedPackages[0].version }}
+          release_name: Release v${{ steps.changesets.outputs.publishedPackages[0].version }}
+          body: |
+            ## HiveLLM TypeScript Workspace Release
+
+            ### 📦 Updated Packages
+            ${{ steps.changesets.outputs.publishedPackages }}
+
+            ### 🎯 BIP Implementations
+            - **BIP-01**: Voting system (`@hivellm/bip-system`)
+            - **BIP-02**: Cryptography (`@hivellm/crypto-utils`)
+            - **BIP-03**: Resilience framework (`@hivellm/resilience-framework`)
+
+            ### 🔗 Related Repositories
+            - [hive-gov](https://github.com/hivellm/hive-gov) - Governance & BIP specifications
+            - [hive-cursor-extension](https://github.com/hivellm/hive-cursor-extension) - BIP-00 implementation
+            - [hive-umicp](https://github.com/hivellm/hive-umicp) - BIP-05 implementation
+          draft: false
+          prerelease: false

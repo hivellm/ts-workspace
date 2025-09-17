@@ -6,8 +6,8 @@
  * @version 1.0.0
  */
 
-import { ModelIdentity, AITask, AIResponse } from '../types/index.js';
 import { PerformanceMetrics } from '../fallback/FallbackManager.js';
+import { ModelIdentity, AITask, AIResponse } from '../types/index.js';
 
 /**
  * Load balancing algorithms

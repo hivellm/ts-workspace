@@ -6,8 +6,8 @@
  * @version 1.0.0
  */
 
-import { MetricDataPoint, SystemMetrics, ModelMetrics } from './MetricsCollector.js';
 import { Alert } from './AlertManager.js';
+import { MetricDataPoint, SystemMetrics, ModelMetrics } from './MetricsCollector.js';
 
 /**
  * Time period for analytics

@@ -4,6 +4,7 @@
  */
 
 import { describe, it, expect, beforeAll } from 'vitest';
+
 import { ECCService } from '../ecc/index.js';
 
 const TEST_MSG = 'Hello, CMMV-Hive!';

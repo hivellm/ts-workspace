@@ -5,6 +5,7 @@
  */
 
 import { createHash, createHmac } from 'crypto';
+
 import type { Vote, ModelIdentity, Proposal } from '../../shared-types/src/index.js';
 
 /**

@@ -3,8 +3,9 @@
  */
 
 import { describe, it, expect } from 'vitest';
-import { SecureKeyStorage } from '../storage/index.js';
+
 import { ECCService } from '../ecc/index.js';
+import { SecureKeyStorage } from '../storage/index.js';
 
 describe('SecureKeyStorage', () => {
   it('should store and retrieve a private key', async () => {

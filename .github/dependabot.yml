@@ -1,0 +1,114 @@
+version: 2
+updates:
+  # Root workspace dependencies
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+    labels:
+      - "dependencies"
+      - "automated"
+    reviewers:
+      - "hivellm-team"
+
+  # BIP System package (BIP-01)
+  - package-ecosystem: "npm"
+    directory: "/packages/bip-system"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:30"
+    open-pull-requests-limit: 3
+    commit-message:
+      prefix: "chore(bip-system)"
+      include: "scope"
+    labels:
+      - "dependencies"
+      - "bip-01"
+      - "automated"
+
+  # Crypto Utils package (BIP-02)
+  - package-ecosystem: "npm"
+    directory: "/packages/crypto-utils"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "10:00"
+    open-pull-requests-limit: 3
+    commit-message:
+      prefix: "chore(crypto-utils)"
+      include: "scope"
+    labels:
+      - "dependencies"
+      - "bip-02"
+      - "automated"
+
+  # Resilience Framework package (BIP-03)
+  - package-ecosystem: "npm"
+    directory: "/packages/resilience-framework"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "10:30"
+    open-pull-requests-limit: 3
+    commit-message:
+      prefix: "chore(resilience-framework)"
+      include: "scope"
+    labels:
+      - "dependencies"
+      - "bip-03"
+      - "automated"
+
+  # Shared Types package
+  - package-ecosystem: "npm"
+    directory: "/packages/shared-types"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "11:00"
+    open-pull-requests-limit: 2
+    commit-message:
+      prefix: "chore(shared-types)"
+      include: "scope"
+    labels:
+      - "dependencies"
+      - "types"
+      - "automated"
+
+  # Testing Utils package
+  - package-ecosystem: "npm"
+    directory: "/packages/testing-utils"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "11:30"
+    open-pull-requests-limit: 2
+    commit-message:
+      prefix: "chore(testing-utils)"
+      include: "scope"
+    labels:
+      - "dependencies"
+      - "testing"
+      - "automated"
+
+  # GitHub Actions workflows
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "friday"
+      time: "14:00"
+    open-pull-requests-limit: 2
+    commit-message:
+      prefix: "chore(ci)"
+      include: "scope"
+    labels:
+      - "ci"
+      - "github-actions"
+      - "automated"

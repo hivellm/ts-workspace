@@ -6,8 +6,8 @@
  * @version 1.0.0
  */
 
-import { ModelIdentity, AITask } from '../types/index.js';
 import { PerformanceMetrics } from '../fallback/FallbackManager.js';
+import { ModelIdentity, AITask } from '../types/index.js';
 
 /**
  * Optimization strategy types

@@ -4,6 +4,7 @@
  */
 
 import { createHash } from 'crypto';
+
 import { VotingBlock, VotingSession, VoteData, ResultData, BlockType } from '../types/index.js';
 
 export class VotingChain {

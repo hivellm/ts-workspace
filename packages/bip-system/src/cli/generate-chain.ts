@@ -4,9 +4,9 @@
  * Generates implementation tracking chain based on existing BIPs
  */
 
+import { createHash } from 'crypto';
 import { promises as fs } from 'fs';
 import { join } from 'path';
-import { createHash } from 'crypto';
 
 interface ChainBlock {
   index: number;

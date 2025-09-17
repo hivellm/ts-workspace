@@ -10,8 +10,10 @@
  */
 
 import { readFileSync } from 'fs';
-import { VoteHashService } from './hash.js';
+
 import type { Vote, ModelIdentity, Proposal } from '../../shared-types/src/index.js';
+
+import { VoteHashService } from './hash.js';
 
 interface CLIOptions {
   command: 'vote' | 'proposal' | 'identity' | 'batch' | 'session' | 'verify';

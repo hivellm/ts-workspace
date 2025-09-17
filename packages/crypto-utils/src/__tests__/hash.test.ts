@@ -4,9 +4,10 @@
  * @version 1.0.0
  */
 
-import { describe, it, expect } from 'vitest';
-import { VoteHashService } from '../hash.js';
 import type { Vote, ModelIdentity, Proposal } from '@cmmv/hive-shared-types';
+import { describe, it, expect } from 'vitest';
+
+import { VoteHashService } from '../hash.js';
 
 describe('VoteHashService', () => {
   describe('generateVoteHash', () => {

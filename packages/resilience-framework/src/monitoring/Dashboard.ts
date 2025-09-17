@@ -6,8 +6,8 @@
  * @version 1.0.0
  */
 
-import { SystemMetrics, ModelMetrics, MetricDataPoint } from './MetricsCollector.js';
 import { Alert, AlertSeverity } from './AlertManager.js';
+import { SystemMetrics, ModelMetrics, MetricDataPoint } from './MetricsCollector.js';
 
 /**
  * Dashboard widget types

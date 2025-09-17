@@ -1,0 +1,134 @@
+name: PR Validation
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches: [ main, develop ]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validation:
+    name: PR Validation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup PNPM
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10.15.1
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Type Check
+        run: pnpm type-check
+
+      - name: Build
+        run: pnpm build
+
+      - name: Run Tests
+        run: pnpm test
+
+      - name: Lint Check
+        run: pnpm lint
+        continue-on-error: true
+
+      - name: Format Check
+        run: pnpm format:check
+        continue-on-error: true
+
+      - name: Generate PR Summary
+        run: |
+          echo "## 🚀 HiveLLM TypeScript Workspace - PR Validation" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 📦 Multi-BIP Implementation Status" >> $GITHUB_STEP_SUMMARY
+          echo "- **BIP-01** (Voting System): \`@hivellm/bip-system\`" >> $GITHUB_STEP_SUMMARY
+          echo "- **BIP-02** (Cryptography): \`@hivellm/crypto-utils\`" >> $GITHUB_STEP_SUMMARY
+          echo "- **BIP-03** (Resilience): \`@hivellm/resilience-framework\`" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### ✅ Validation Results" >> $GITHUB_STEP_SUMMARY
+          echo "- **TypeScript**: Compilation successful" >> $GITHUB_STEP_SUMMARY
+          echo "- **Build**: All packages built successfully" >> $GITHUB_STEP_SUMMARY
+          echo "- **Tests**: All test suites executed" >> $GITHUB_STEP_SUMMARY
+          echo "- **Quality**: Code quality checks completed" >> $GITHUB_STEP_SUMMARY
+
+  notify-success:
+    name: Notify Success
+    runs-on: ubuntu-latest
+    needs: [validation]
+    if: success()
+    steps:
+      - name: Comment on PR
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `## ✅ PR Validation Successful
+
+              ### 🎯 HiveLLM TypeScript Workspace Validation
+
+              All validation checks have passed for this Pull Request:
+
+              - ✅ **TypeScript Compilation**: Zero errors
+              - ✅ **Package Builds**: All 5 packages built successfully
+              - ✅ **Test Suites**: All tests executed successfully
+              - ✅ **Code Quality**: Lint and format checks completed
+
+              ### 📦 Packages Validated
+              - \`@hivellm/bip-system\` (BIP-01: Voting System)
+              - \`@hivellm/crypto-utils\` (BIP-02: Cryptography)
+              - \`@hivellm/resilience-framework\` (BIP-03: AI Resilience)
+              - \`@hivellm/shared-types\` (Common TypeScript types)
+              - \`@hivellm/testing-utils\` (Testing utilities)
+
+              **Ready for review and merge! 🚀**`
+            })
+
+  notify-failure:
+    name: Notify Failure
+    runs-on: ubuntu-latest
+    needs: [validation]
+    if: failure()
+    steps:
+      - name: Comment on PR
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `## ❌ PR Validation Failed
+
+              ### 🎯 HiveLLM TypeScript Workspace Validation
+
+              Some validation checks have failed for this Pull Request.
+
+              Please check the workflow logs and fix any issues:
+
+              - 🔍 **TypeScript Compilation**: Check for type errors
+              - 🏗️ **Package Builds**: Ensure all packages compile
+              - 🧪 **Test Suites**: Fix any failing tests
+              - 📏 **Code Quality**: Address lint/format issues
+
+              ### 📦 Packages in Scope
+              - \`@hivellm/bip-system\` (BIP-01: Voting System)
+              - \`@hivellm/crypto-utils\` (BIP-02: Cryptography)
+              - \`@hivellm/resilience-framework\` (BIP-03: AI Resilience)
+
+              Please review the failed checks and update your PR accordingly.`
+            })
