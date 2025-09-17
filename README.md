@@ -187,16 +187,9 @@ hive-ts-workspace/
 - **🔐 Cryptography**: secp256k1 elliptic curve cryptography
 - **⚡ Build System**: Optimized with parallel execution
 
-## 🔗 HiveLLM Ecosystem
+## 🔗 Part of HiveLLM Ecosystem
 
-This TypeScript workspace is part of the HiveLLM ecosystem:
-
-| Repository | Description | Status |
-|------------|-------------|--------|
-| **[hive-gov](../hive-gov)** | Governance, BIPs, minutes, proposals | Active |
-| **[hive-cursor-extension](../hive-cursor-extension)** | BIP-00 Cursor IDE extension | In Development |
-| **[hive-umicp](../hive-umicp)** | BIP-05 Universal Matrix Protocol | In Implementation |
-| **[cmmv-hive](../cmmv-hive)** | Core infrastructure (legacy) | Archived |
+This TypeScript workspace implements core BIPs for the [HiveLLM ecosystem](../hivellm).
 
 ## 🚀 Usage Examples
 
